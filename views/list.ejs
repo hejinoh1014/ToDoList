@@ -8,15 +8,21 @@
 
 <body>
 
-  <% if(KindofDay === "Saturday" || KindofDay === "Sunday"){ %>
-  <h1 style="color: purple">It's a <%= KindofDay %> List </h1>
-  <%} else{  %>
-  <h1 style="color: blue">It's a <%= KindofDay %> List </h1>
-  <%  }%>
+<h1> <%= KindofDay %> </h1>
 
+<ul>
 
+  <% for(var i=0; i < newListItems.length; i++){ %>
+    <li> <%= newListItems[i] %></li>
+  <% } %>
 
+</ul>
+
+<form class="" action="/" method="post">
+  <input type="text" name="newItem">
+  <button type="button" name="button">Add</button>
+</form>
 
 </body>
-   
+
 </html>
