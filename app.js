@@ -10,7 +10,7 @@ let items = ["Grocery Shopping", "Review the homework", "Write Diary"];
 app.set('view engine', 'ejs');
 
 app.use(bodyParser.urlencoded({extended: true}));
-
+app.use(express.static("public"));
 
 app.get("/", function(req, res) {
 
