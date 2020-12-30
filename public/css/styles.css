@@ -1,6 +1,5 @@
 html{
-  /* background-color: #E4E9FD; */
-  background-image: linear-gradient(#f7e7bd 50%, #d9c6a5 50%);
+  background-image: linear-gradient(90deg, #f7e7bd 50%, #d9c6a5 50%);
   color: black;
   margin: auto;
   width: 50%;
@@ -11,6 +10,11 @@ html{
   background-color: #c26565;
   color: white;
   text-align: center;
+}
+
+#listOfItem:checked + p{
+  color:blue;
+  text-decoration: line-through;
 }
 
 .box{
@@ -30,11 +34,6 @@ html{
 
 .item:last-child{
   border-bottom: 0;
-}
-
-input:checked+p {
-  text-decoration: line-through;
-  text-decoration-color: #eff8ff;
 }
 
 p{
