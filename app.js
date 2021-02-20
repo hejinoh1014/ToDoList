@@ -2,11 +2,12 @@
 
 const express = require("express");
 const bodyParser = require("body-parser");
+const date = require(__dirname + "/date.js")
 
 const app = express();
 
-let items = ["Grocery Shopping", "Review the homework", "Write Diary"];
-let workItems = [];
+const items = ["Grocery Shopping", "Review the homework", "Write Diary"];
+const workItems = [];
 
 app.set('view engine', 'ejs');
 
@@ -15,18 +16,14 @@ app.use(express.static("public"));
 
 app.get("/", function(req, res) {
 
-  let options = { weekday: 'long', day: 'numeric', month: 'long'};
-  let today = new Date();
-
-  let day = today.toLocaleDateString("en-US", options);
-
+  const day = date();
   res.render("list", { listTitle: day, newListItems: items });
 
 });
 
 app.post("/", function(req, res){
 
-  let item = req.body.newItem;
+  const item = req.body.newItem;
 
   if(req.body.list === "Work"){
     workItems.push(item);
